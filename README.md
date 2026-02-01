@@ -18,6 +18,10 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Supported Field Types](#supported-field-types)
+- [Troubleshooting](#troubleshooting)
+  - [ESM/CommonJS Module Errors](#esmcommonjs-module-errors)
+  - [Peer Dependency Conflicts](#peer-dependency-conflicts)
+  - ["Bulk Edit" Button Not Appearing](#bulk-edit-button-not-appearing)
 - [License](#license)
 
 ## Features
@@ -128,7 +132,7 @@ If you get peer dependency errors during installation, use the `--legacy-peer-de
 npm install strapi-plugin-bulk-editor --legacy-peer-deps
 ```
 
-### Plugin Not Loading
+### "Bulk Edit" Button Not Appearing
 
 Make sure the plugin is enabled in your config:
 
