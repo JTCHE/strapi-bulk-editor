@@ -1,8 +1,17 @@
-import { DesignSystemProvider } from '@strapi/design-system';
 import { Pencil } from '@strapi/icons';
 import { useFetchClient, useNotification } from '@strapi/strapi/admin';
-import ReactDOM from 'react-dom/client';
+import React from 'react';
 import { ModalManager, openBulkEditModal } from './components/ModalManager';
+
+// Global component that wraps the app
+const BulkEditorProvider = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <>
+      {children}
+      <ModalManager />
+    </>
+  );
+};
 
 export default {
   register(app: any) {
@@ -13,24 +22,17 @@ export default {
   },
 
   bootstrap(app: any) {
-    // Create a div for the modal manager and render it once
-    const modalRoot = document.createElement('div');
-    modalRoot.id = 'bulk-editor-modal-root';
-    document.body.appendChild(modalRoot);
-
-    const root = ReactDOM.createRoot(modalRoot);
-    root.render(
-      <DesignSystemProvider locale="en">
-        <ModalManager />
-      </DesignSystemProvider>
-    );
+    // Inject ModalManager into app layout
+    app.injectContentManagerComponent('editView', 'right-links', {
+      name: 'bulk-editor-modal',
+      Component: () => <ModalManager />,
+    });
 
     const contentManager = app.getPlugin('content-manager');
 
     if (contentManager && contentManager.apis) {
       contentManager.apis.addBulkAction([
         function BulkEditAction({ documents, model }: { documents: any[]; model: string }) {
-          // Access hooks here where we have proper context
           const toggleNotification = useNotification();
           const fetchClient = useFetchClient();
 
@@ -38,7 +40,6 @@ export default {
             openBulkEditModal(documents, model, toggleNotification, fetchClient);
           };
 
-          // Return props object that works
           return {
             label: 'Bulk Edit',
             icon: <Pencil />,

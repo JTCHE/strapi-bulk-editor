@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-bulk-editor",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Bulk edit Strapi entries in a spreadsheet-like interface",
   "license": "MIT",
   "author": "John Chedeville <hi@jchd.me>",
