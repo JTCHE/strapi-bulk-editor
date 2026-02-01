@@ -3,7 +3,7 @@
 Edit multiple Strapi entries at once in a spreadsheet-like interface.
 
 [![Strapi v5](https://img.shields.io/badge/Strapi-v5-blue)](https://strapi.io/five)
-[![npm](https://img.shields.io/npm/v/strapi-bulk-editor)](https://www.npmjs.com/package/strapi-bulk-editor)
+[![npm](https://img.shields.io/npm/v/strapi-plugin-bulk-editor)](https://www.npmjs.com/package/strapi-plugin-bulk-editor)
 
 ![strapi dashboad with a spreadsheet-like bulk editor modal opened](thumbnail.png)
 
@@ -27,7 +27,7 @@ Edit multiple Strapi entries at once in a spreadsheet-like interface.
 ## Installation
 
 ```bash
-npm install strapi-bulk-editor
+npm install strapi-plugin-bulk-editor
 ```
 
 Add the plugin to your Strapi config:

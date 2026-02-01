@@ -1,12 +1,12 @@
 {
-  "name": "strapi-bulk-editor",
+  "name": "strapi-plugin-bulk-editor",
   "version": "0.1.0",
   "description": "Bulk edit Strapi entries in a spreadsheet-like interface",
   "license": "MIT",
   "author": "John Chedeville <hi@jchd.me>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JTCHE/strapi-bulk-editor"
+    "url": "https://github.com/JTCHE/strapi-plugin-bulk-editor"
   },
   "keywords": [
     "strapi",
