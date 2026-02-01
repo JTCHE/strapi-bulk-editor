@@ -88,6 +88,67 @@ npm run develop
 | Components                | ❌ Not supported   |
 | Dynamic Zones             | ❌ Not supported   |
 
+## Troubleshooting
+
+### ESM/CommonJS Module Errors
+
+If you encounter errors like:
+```
+The requested module '/admin/node_modules/react-dom/index.js' does not provide an export named 'flushSync'
+```
+or similar errors with `lodash`, you need to configure Vite's dependency optimization.
+
+**Fix:** Update your Strapi admin Vite config:
+
+```ts
+// src/admin/vite.config.ts
+import { mergeConfig, type UserConfig } from "vite";
+
+export default (config: UserConfig) => {
+  return mergeConfig(config, {
+    optimizeDeps: {
+      include: ['react-dom', 'lodash'],
+    },
+  });
+};
+```
+
+If you don't have this file, create it. Then clear the Vite cache and restart:
+
+```bash
+rm -rf node_modules/.vite
+npm run develop
+```
+
+### Peer Dependency Conflicts
+
+If you get peer dependency errors during installation, use the `--legacy-peer-deps` flag:
+
+```bash
+npm install strapi-plugin-bulk-editor --legacy-peer-deps
+```
+
+### Plugin Not Loading
+
+Make sure the plugin is enabled in your config:
+
+```js
+// config/plugins.js or config/plugins.ts
+module.exports = {
+  "bulk-editor": {
+    enabled: true,
+  },
+};
+```
+
+Then rebuild and restart Strapi:
+
+```bash
+rm -rf .cache dist node_modules/.vite
+npm run build
+npm run develop
+```
+
 ## License
 
 MIT

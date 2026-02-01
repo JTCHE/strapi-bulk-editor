@@ -8,3 +8,6 @@ node_modules/*
 # packed files
 *.tar.gz
 *.tgz
+
+# lock files
+package-lock.json

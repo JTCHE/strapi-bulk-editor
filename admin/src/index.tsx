@@ -1,17 +1,29 @@
+import { DesignSystemProvider } from '@strapi/design-system';
 import { Pencil } from '@strapi/icons';
 import { useFetchClient, useNotification } from '@strapi/strapi/admin';
 import React from 'react';
 import { ModalManager, openBulkEditModal } from './components/ModalManager';
 
-// Global component that wraps the app
-const BulkEditorProvider = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <>
-      {children}
+let modalMounted = false;
+
+async function mountModalManager() {
+  if (modalMounted) return;
+  modalMounted = true;
+
+  // Dynamic import to avoid ESM/CJS issues at parse time
+  const ReactDOMClient = await import('react-dom/client');
+
+  const modalRoot = document.createElement('div');
+  modalRoot.id = 'bulk-editor-modal-root';
+  document.body.appendChild(modalRoot);
+
+  const root = ReactDOMClient.createRoot(modalRoot);
+  root.render(
+    <DesignSystemProvider locale="en">
       <ModalManager />
-    </>
+    </DesignSystemProvider>
   );
-};
+}
 
 export default {
   register(app: any) {
@@ -22,11 +34,8 @@ export default {
   },
 
   bootstrap(app: any) {
-    // Inject ModalManager into app layout
-    app.injectContentManagerComponent('editView', 'right-links', {
-      name: 'bulk-editor-modal',
-      Component: () => <ModalManager />,
-    });
+    // Mount the modal manager
+    mountModalManager();
 
     const contentManager = app.getPlugin('content-manager');
 
@@ -44,8 +53,6 @@ export default {
             label: 'Bulk Edit',
             icon: <Pencil />,
             onClick: handleClick,
-            children: 'Bulk Edit',
-            variant: 'secondary',
           };
         },
       ]);
