@@ -2,8 +2,8 @@
 
 Edit multiple Strapi entries at once in a spreadsheet-like interface.
 
-![![Strapi v5](https://img.shields.io/badge/Strapi-v5-blue)](https://strapi.io/five)
-![![npm](https://img.shields.io/npm/v/strapi-bulk-editor)](https://www.npmjs.com/package/strapi-bulk-editor)
+[![Strapi v5](https://img.shields.io/badge/Strapi-v5-blue)](https://strapi.io/five)
+[![npm](https://img.shields.io/npm/v/strapi-bulk-editor)](https://www.npmjs.com/package/strapi-bulk-editor)
 
 ![strapi dashboad with a spreadsheet-like bulk editor modal opened](thumbnail.png)
 
@@ -17,7 +17,7 @@ Edit multiple Strapi entries at once in a spreadsheet-like interface.
   - Shift+Cmd/Ctrl+Click to add a new range selection to the current selection
 - **Drag to Fill** - Drag a value down to apply it to multiple rows
 - **Bulk Save** - Save all changes in a single operation
--  **Almost All Field Types** - Text, numbers, booleans, enums, dates, and relations… Support list below
+- **Almost All Field Types** - Text, numbers, booleans, enums, dates, and relations… Support list below
 - **Relation Support** - Full support for oneToOne, manyToOne, oneToMany, and manyToMany relations
 
 ## Requirements
