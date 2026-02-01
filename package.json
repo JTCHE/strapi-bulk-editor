@@ -1,7 +1,7 @@
 {
   "name": "strapi-plugin-bulk-editor",
   "type": "module",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Bulk edit Strapi entries in a spreadsheet-like interface",
   "license": "MIT",
   "author": "John Chedeville <hi@jchd.me>",
@@ -24,6 +24,7 @@
   },
   "main": "./strapi-server.js",
   "exports": {
+    "./package.json": "./package.json",
     "./strapi-admin": {
       "source": "./admin/src/index.tsx",
       "require": "./strapi-admin.js"
