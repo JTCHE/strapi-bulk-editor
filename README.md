@@ -1,11 +1,24 @@
-# Strapi Plugin: Bulk Editor
+<div align="center">
+  <img style="width: 160px; height: auto;" src="https://i.imgur.com/z0LMq7J.png" alt="Logo for Strapi Plugin: Bulk Editor" />
 
-Edit multiple Strapi entries at once in a spreadsheet-like interface.
+  <h1>Strapi Plugin: Bulk Editor</h1>
 
-[![Strapi v5](https://img.shields.io/badge/Strapi-v5-blue)](https://strapi.io/five)
-[![npm](https://img.shields.io/npm/v/strapi-plugin-bulk-editor)](https://www.npmjs.com/package/strapi-plugin-bulk-editor)
+<a href="https://strapi.io/five"><img src="https://img.shields.io/badge/Strapi-v5-blue" alt="Strapi v5" /></a>
+<a href="https://www.npmjs.com/package/strapi-plugin-bulk-editor"><img src="https://img.shields.io/npm/v/strapi-plugin-bulk-editor" alt="npm" /></a>
 
-![strapi dashboad with a spreadsheet-like bulk editor modal opened](https://i.imgur.com/ah3PnvA.png)
+  <p>Edit multiple Strapi entries at once in a spreadsheet-like interface.</p>
+
+  <img style="width: 960px; height: auto;" src="https://i.imgur.com/ah3PnvA.png" alt="A screenshot of the Strapi dashboad with a spreadsheet-like bulk editor modal opened" />
+</div>
+
+<h1>Get Started</h1>
+
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Supported Field Types](#supported-field-types)
+- [License](#license)
 
 ## Features
 
