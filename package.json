@@ -1,0 +1,45 @@
+{
+  "name": "strapi-bulk-editor",
+  "version": "0.1.0",
+  "description": "Bulk edit Strapi entries in a spreadsheet-like interface",
+  "license": "MIT",
+  "author": "John Chedeville <hi@jchd.me>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JTCHE/strapi-bulk-editor"
+  },
+  "keywords": [
+    "strapi",
+    "strapi-plugin",
+    "bulk-edit",
+    "spreadsheet",
+    "batch-update"
+  ],
+  "strapi": {
+    "name": "bulk-editor",
+    "displayName": "Bulk Editor",
+    "description": "Edit multiple entries at once in a spreadsheet view",
+    "kind": "plugin"
+  },
+  "main": "./strapi-server.js",
+  "exports": {
+    "./strapi-admin": {
+      "source": "./admin/src/index.tsx",
+      "require": "./strapi-admin.js"
+    },
+    "./strapi-server": {
+      "source": "./server/index.js",
+      "require": "./strapi-server.js"
+    }
+  },
+  "files": [
+    "admin",
+    "server",
+    "strapi-admin.js",
+    "strapi-server.js"
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "@strapi/strapi": "^5.0.0"
+  }
+}
