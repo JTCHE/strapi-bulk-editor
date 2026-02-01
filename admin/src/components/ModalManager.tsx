@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { createPortal } from 'react-dom';
 import { BulkEditModal } from './BulkEditModal';
 
 interface ModalData {
@@ -49,14 +48,13 @@ export const ModalManager: React.FC = () => {
     return null;
   }
 
-  return createPortal(
+  return (
     <BulkEditModal
       documents={modalState.documents}
       contentType={modalState.model}
       onClose={() => setModalState({ isOpen: false, documents: [], model: '', notificationFn: null, fetchClient: null })}
       notificationFn={modalState.notificationFn}
       fetchClient={modalState.fetchClient}
-    />,
-    document.body
+    />
   );
 };
