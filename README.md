@@ -27,7 +27,7 @@ Edit multiple Strapi entries at once in a spreadsheet-like interface.
 ## Installation
 
 ```bash
-npm install strapi-plugin-bulk-editor
+npm install strapi-bulk-editor
 ```
 
 Add the plugin to your Strapi config:
