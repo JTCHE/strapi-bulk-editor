@@ -5,7 +5,7 @@ Edit multiple Strapi entries at once in a spreadsheet-like interface.
 [![Strapi v5](https://img.shields.io/badge/Strapi-v5-blue)](https://strapi.io/five)
 [![npm](https://img.shields.io/npm/v/strapi-plugin-bulk-editor)](https://www.npmjs.com/package/strapi-plugin-bulk-editor)
 
-![strapi dashboad with a spreadsheet-like bulk editor modal opened](thumbnail.png)
+![strapi dashboad with a spreadsheet-like bulk editor modal opened](https://i.imgur.com/ah3PnvA.png)
 
 ## Features
 
