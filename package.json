@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-bulk-editor",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Bulk edit Strapi entries in a spreadsheet-like interface",
   "license": "MIT",
   "author": "John Chedeville <hi@jchd.me>",
@@ -46,7 +46,8 @@
   "dependencies": {},
   "peerDependencies": {
     "@strapi/strapi": "^5.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "@strapi/design-system": "^2.0.0",
+    "@strapi/icons": "^2.0.0",
+    "react": "^18.0.0"
   }
 }
