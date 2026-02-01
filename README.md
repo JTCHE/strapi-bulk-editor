@@ -58,6 +58,8 @@ module.exports = {
   },
 };
 ```
+⚠️ **Highly recommended:** [Configure Vite's dependency optimization](#esmcommonjs-module-errors) (instructions below). \
+Without it, your Strapi dashboard may be all blank and return the following error in the console: `The requested module does not provide an export named 'flushSync'`.
 
 Start your Strapi admin panel :
 
@@ -100,9 +102,7 @@ If you encounter errors like:
 ```
 The requested module '/admin/node_modules/react-dom/index.js' does not provide an export named 'flushSync'
 ```
-or similar errors with `lodash`, you need to configure Vite's dependency optimization.
-
-**Fix:** Update your Strapi admin Vite config:
+or similar errors with `lodash`, you need to configure Vite's dependency optimization by updating your Strapi admin Vite config file :
 
 ```ts
 // src/admin/vite.config.ts
@@ -143,14 +143,6 @@ module.exports = {
     enabled: true,
   },
 };
-```
-
-Then rebuild and restart Strapi:
-
-```bash
-rm -rf .cache dist node_modules/.vite
-npm run build
-npm run develop
 ```
 
 ## License
