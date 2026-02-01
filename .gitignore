@@ -1,2 +1,10 @@
 # DS Store
+**/.DS_Store
 .DS_Store
+
+# Node modules
+node_modules/*
+
+# packed files
+*.tar.gz
+*.tgz
